@@ -1,0 +1,53 @@
+name: flutter_piano
+description: A Cross platform Midi Piano built with Flutter.
+maintainer: Rody Davis Jr <rody.davis.jr@gmail.com>
+homepage: https://github.com/rodydavis/flutter_piano
+version: 1.7.0+410
+publish_to: none
+environment:
+  sdk: ">=3.0.0-171.0.dev <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  riverpod: ^2.3.6
+  flutter_riverpod: ^2.3.6
+  recase: ^4.1.0
+  shared_preferences: ^2.2.1
+  app_review: ^2.1.2+1
+  audioplayers: ^5.1.0
+  intl: any
+  country_flags: ^2.1.1
+  flutter_whatsnew: ^1.0.5+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_version: ^2.1.1
+  build_runner: ^2.4.6
+  msix: ^3.16.1
+
+dependency_overrides:
+  package_info_plus: ^4.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/sounds/shot/
+    - assets/sounds/sustain/
+    - CHANGELOG.md
+
+msix_config:
+  display_name: The Pocket Piano
+  publisher_display_name: Rody Davis
+  logo_path: C:\Users\Surface\Documents\GitHub\flutter_piano\assets\images\icon.png
+  identity_name: 2817RodyDavis.ThePocketPiano
+  publisher: CN=DAC213A7-CAAA-40F4-8B08-78AADBC0B859
+  languages: en, de, es, ru, ja, fr, zh
+  capabilities: ""
+  msix_version: 1.0.1.0
+  store: true
