@@ -26,9 +26,16 @@ class _SettingsState extends State<Settings> {
       children: [
         Card(
           margin: EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
           elevation: 8,
           child: Padding(
-            padding: EdgeInsets.all(5),
+            padding: EdgeInsets.symmetric(horizontal: 12),
             child: ExpansionTile(
               shape: Border.all(
                 color: Colors.transparent,
@@ -57,8 +64,8 @@ class _SettingsState extends State<Settings> {
                             label: Text(
                               item.label(context),
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             icon: Icon(item.icon),
@@ -78,6 +85,13 @@ class _SettingsState extends State<Settings> {
         ),
         Card(
           margin: EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
           elevation: 8,
           child: Consumer(builder: (context, ref, child) {
             final color = ref.watch(themeColorProvider);
@@ -92,6 +106,13 @@ class _SettingsState extends State<Settings> {
         ),
         Card(
           margin: EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
           elevation: 8,
           child: Consumer(builder: (context, ref, child) {
             final keyWidth = ref.watch(keyWidthProvider);
@@ -227,6 +248,13 @@ class _SettingsState extends State<Settings> {
         ),
         Card(
           margin: EdgeInsets.all(10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
           elevation: 8,
           child: Consumer(builder: (context, ref, child) {
             return ExpansionTile(
