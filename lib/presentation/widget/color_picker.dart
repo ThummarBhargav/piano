@@ -40,6 +40,7 @@ class ColorPicker extends StatelessWidget {
     return ExpansionTile(
       title: Text(label),
       leading: const Icon(Icons.color_lens),
+      shape: Border.all(color: Colors.transparent),
       children: [
         Wrap(
           children: themeColors

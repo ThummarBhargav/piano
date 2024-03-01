@@ -64,6 +64,8 @@ class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
           brightness: Brightness.light,
         ),
         appBarTheme: appBarTheme,
+        splashColor: Colors.transparent, // Set splashColor to transparent
+        highlightColor: Colors.transparent, // Set highlightColor to transparent
       ),
       darkTheme: ThemeData.dark(useMaterial3: true).copyWith(
         colorScheme: ColorScheme.fromSeed(
@@ -71,6 +73,8 @@ class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
           brightness: Brightness.dark,
         ),
         appBarTheme: appBarTheme,
+        splashColor: Colors.transparent, // Set splashColor to transparent
+        highlightColor: Colors.transparent, // Set highlightColor to transparent
       ),
       navigatorKey: _navKey,
       themeMode: mode,

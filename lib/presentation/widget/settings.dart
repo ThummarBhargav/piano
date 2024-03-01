@@ -30,8 +30,6 @@ class _SettingsState extends State<Settings> {
           child: Padding(
             padding: EdgeInsets.all(5),
             child: ExpansionTile(
-
-              backgroundColor: Colors.transparent,
               shape: Border.all(
                 color: Colors.transparent,
               ),
@@ -43,7 +41,8 @@ class _SettingsState extends State<Settings> {
                 Consumer(builder: (context, ref, child) {
                   final brightness = ref.watch(themeModeProvider);
                   return ListTile(
-                    splashColor: Colors.transparent, // Set splashColor to transparent
+                    splashColor:
+                        Colors.transparent, // Set splashColor to transparent
                     hoverColor: Colors.transparent,
                     focusColor: Colors.transparent,
                     title: SegmentedButton(
@@ -67,7 +66,8 @@ class _SettingsState extends State<Settings> {
                       ],
                       selected: {brightness},
                       onSelectionChanged: (value) {
-                        ref.read(themeModeProvider.notifier).state = value.first;
+                        ref.read(themeModeProvider.notifier).state =
+                            value.first;
                       },
                     ),
                   );
@@ -76,7 +76,6 @@ class _SettingsState extends State<Settings> {
             ),
           ),
         ),
-
         Card(
           margin: EdgeInsets.all(10),
           elevation: 8,
@@ -91,7 +90,6 @@ class _SettingsState extends State<Settings> {
             );
           }),
         ),
-
         Card(
           margin: EdgeInsets.all(10),
           elevation: 8,
@@ -105,6 +103,9 @@ class _SettingsState extends State<Settings> {
             return ExpansionTile(
               title: Text(context.locale.keySettings),
               leading: const Icon(Icons.music_note),
+              shape: Border.all(
+                color: Colors.transparent,
+              ),
               children: [
                 ListTile(
                   title: Text(context.locale.keyWidth),
@@ -126,10 +127,10 @@ class _SettingsState extends State<Settings> {
                     onPressed: keyWidth == 80
                         ? null
                         : () {
-                      setState(() {
-                        ref.read(keyWidthProvider.notifier).state = 80;
-                      });
-                    },
+                            setState(() {
+                              ref.read(keyWidthProvider.notifier).state = 80;
+                            });
+                          },
                   ),
                 ),
                 ListTile(
@@ -224,7 +225,6 @@ class _SettingsState extends State<Settings> {
             );
           }),
         ),
-
         Card(
           margin: EdgeInsets.all(10),
           elevation: 8,
@@ -232,6 +232,9 @@ class _SettingsState extends State<Settings> {
             return ExpansionTile(
               title: Text(context.locale.language),
               leading: const Icon(Icons.language),
+              shape: Border.all(
+                color: Colors.transparent,
+              ),
               children: [
                 SizedBox(
                   width: double.infinity,
@@ -242,10 +245,10 @@ class _SettingsState extends State<Settings> {
                           icon: locale.flag,
                           label: Text(locale.description(context)),
                           onPressed: ref.watch(localeProvider)?.languageCode ==
-                              locale.languageCode
+                                  locale.languageCode
                               ? null
                               : () => ref.read(localeProvider.notifier).state =
-                              locale,
+                                  locale,
                         ),
                     ],
                   ),
@@ -255,7 +258,7 @@ class _SettingsState extends State<Settings> {
                   OutlinedButton(
                     child: Text(context.locale.resetToDefault),
                     onPressed: () =>
-                    ref.read(localeProvider.notifier).state = null,
+                        ref.read(localeProvider.notifier).state = null,
                   ),
                 const SizedBox(height: 10),
               ],
