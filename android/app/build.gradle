@@ -30,6 +30,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    namespace "com.appleeducate.flutter_piano"
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
@@ -57,7 +58,6 @@ android {
     
     defaultConfig {
         applicationId "com.appleeducate.flutter_piano"
-//        minSdkVersion flutter.minSdkVersion
         minSdkVersion 24
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
@@ -66,11 +66,6 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
-        }
-        debug {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
     }
@@ -82,4 +77,9 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:32.2.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx:21.6.0'
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation 'com.google.firebase:firebase-database-ktx:20.3.0'
 }
