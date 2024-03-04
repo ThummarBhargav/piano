@@ -21,6 +21,13 @@ dependencies:
   intl: any
   country_flags: ^2.1.1
   flutter_whatsnew: ^1.0.5+2
+  get_it: ^7.6.4
+  google_mobile_ads: any
+  firebase_core: ^2.20.0
+  firebase_database: ^10.3.2
+  gdpr_dialog: ^2.1.1
+  get_storage: ^2.1.1
+  get:
 
 dev_dependencies:
   flutter_test:

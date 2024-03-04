@@ -1,41 +1,33 @@
 import 'package:flutter/material.dart';
 
 class ColorPicker extends StatelessWidget {
-  const ColorPicker({
-    super.key,
-    required this.color,
-    required this.onColorChanged,
-    required this.label,
-  });
-
   final Color color;
   final ValueChanged<Color> onColorChanged;
   final String label;
+  ColorPicker({required this.color, required this.onColorChanged, required this.label});
 
   @override
   Widget build(BuildContext context) {
     final themeColors = [
-      Colors.red,
-      Colors.pink,
-      Colors.purple,
-      Colors.deepPurple,
-      Colors.indigo,
-      Colors.blue,
-      Colors.lightBlue,
-      Colors.cyan,
-      Colors.teal,
-      Colors.green,
-      Colors.lightGreen,
-      Colors.lime,
-      Colors.yellow,
-      Colors.amber,
-      Colors.orange,
-      Colors.deepOrange,
-      Colors.brown,
-      Colors.grey,
-      Colors.blueGrey,
-      // Colors.black,
-      // Colors.white,
+      Color(0xffff6666),
+      Color(0xffff6680),
+      Color(0xffff66ff),
+      Color(0xffa88bda),
+      Color(0xffbf66ff),
+      Color(0xff6666ff),
+      Color(0xff8ac7db),
+      Color(0xff66ffff),
+      Color(0xff00e6e6),
+      Color(0xff66ff66),
+      Color(0xff7bea7b),
+      Color(0xff4dff4d),
+      Color(0xffffff66),
+      Color(0xffffd24d),
+      Color(0xffffc966),
+      Color(0xffff8a66),
+      Color(0xffda7171),
+      Color(0xffa6a6a6),
+      Color(0xff7893a1),
     ];
     return ExpansionTile(
       title: Text(label),
@@ -46,7 +38,7 @@ class ColorPicker extends StatelessWidget {
           children: themeColors
               .map(
                 (item) => Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: () => onColorChanged(item),
                     child: Container(
@@ -59,7 +51,7 @@ class ColorPicker extends StatelessWidget {
                           color: item.value == color.value
                               ? Colors.black
                               : Colors.transparent,
-                          width: 2,
+                          width: 1,
                         ),
                       ),
                     ),

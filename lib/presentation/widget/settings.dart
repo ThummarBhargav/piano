@@ -13,8 +13,6 @@ import 'piano_key.dart';
 import 'piano_section.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({super.key});
-
   @override
   State<Settings> createState() => _SettingsState();
 }
@@ -30,7 +28,7 @@ class _SettingsState extends State<Settings> {
             borderRadius: BorderRadius.circular(10),
             side: BorderSide(
               color: Theme.of(context).colorScheme.primary,
-              width: 2,
+              width: 1,
             ),
           ),
           elevation: 8,
@@ -48,8 +46,7 @@ class _SettingsState extends State<Settings> {
                 Consumer(builder: (context, ref, child) {
                   final brightness = ref.watch(themeModeProvider);
                   return ListTile(
-                    splashColor:
-                        Colors.transparent, // Set splashColor to transparent
+                    splashColor: Colors.transparent, // Set splashColor to transparent
                     hoverColor: Colors.transparent,
                     focusColor: Colors.transparent,
                     title: SegmentedButton(
@@ -73,8 +70,7 @@ class _SettingsState extends State<Settings> {
                       ],
                       selected: {brightness},
                       onSelectionChanged: (value) {
-                        ref.read(themeModeProvider.notifier).state =
-                            value.first;
+                        ref.read(themeModeProvider.notifier).state = value.first;
                       },
                     ),
                   );
@@ -89,7 +85,7 @@ class _SettingsState extends State<Settings> {
             borderRadius: BorderRadius.circular(10),
             side: BorderSide(
               color: Theme.of(context).colorScheme.primary,
-              width: 2,
+              width: 1,
             ),
           ),
           elevation: 8,
@@ -110,7 +106,7 @@ class _SettingsState extends State<Settings> {
             borderRadius: BorderRadius.circular(10),
             side: BorderSide(
               color: Theme.of(context).colorScheme.primary,
-              width: 2,
+              width: 1,
             ),
           ),
           elevation: 8,
@@ -252,7 +248,7 @@ class _SettingsState extends State<Settings> {
             borderRadius: BorderRadius.circular(10),
             side: BorderSide(
               color: Theme.of(context).colorScheme.primary,
-              width: 2,
+              width: 1,
             ),
           ),
           elevation: 8,

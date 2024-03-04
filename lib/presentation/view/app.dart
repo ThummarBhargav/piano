@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_piano/constants/AdsManager/ad_services.dart';
+import 'package:flutter_piano/constants/AdsManager/app_lifecycle_reactor.dart';
+import 'package:flutter_piano/constants/AdsManager/app_open_ad_manager.dart';
+import 'package:flutter_piano/main.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_whatsnew/flutter_whatsnew.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +24,7 @@ class ThePocketPiano extends ConsumerStatefulWidget {
 }
 
 class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
+
   static const updateKey = 'app_check';
   final _navKey = GlobalKey<NavigatorState>();
 
@@ -81,7 +86,7 @@ class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
       locale: ref.watch(localeProvider),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const Home(),
+      home: Home(),
     );
   }
 }
