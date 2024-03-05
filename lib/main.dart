@@ -19,6 +19,8 @@ bool interStitialAdRunning = false;
 String AppOpenID = "";
 String BannerID = "";
 String InterstitialID = "";
+String androidAdsId = "";
+String iOSAdsId = "";
 int interShowTime = 0;
 int appOpenShowTime = 0;
 bool adaptiveBannerSize = false;
@@ -33,7 +35,9 @@ Future<void> main() async {
   );
   await FirebaseDatabaseHelper().adsVisible();
   await GetStorage.init();
-  await GdprDialog.instance.showDialog(isForTest: false, testDeviceId: '').then((onValue) {
+  await GdprDialog.instance
+      .showDialog(isForTest: false, testDeviceId: '')
+      .then((onValue) {
     print('result === $onValue');
   });
   setUp();

@@ -46,7 +46,8 @@ class _SettingsState extends State<Settings> {
                 Consumer(builder: (context, ref, child) {
                   final brightness = ref.watch(themeModeProvider);
                   return ListTile(
-                    splashColor: Colors.transparent, // Set splashColor to transparent
+                    splashColor:
+                        Colors.transparent, // Set splashColor to transparent
                     hoverColor: Colors.transparent,
                     focusColor: Colors.transparent,
                     title: SegmentedButton(
@@ -70,7 +71,8 @@ class _SettingsState extends State<Settings> {
                       ],
                       selected: {brightness},
                       onSelectionChanged: (value) {
-                        ref.read(themeModeProvider.notifier).state = value.first;
+                        ref.read(themeModeProvider.notifier).state =
+                            value.first;
                       },
                     ),
                   );

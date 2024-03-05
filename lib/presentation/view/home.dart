@@ -1,4 +1,3 @@
-import 'package:app_review/app_review.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,7 +20,6 @@ class Home extends ConsumerStatefulWidget {
 }
 
 class _HomeState extends ConsumerState<Home> {
-
   AppLifecycleReactor? appLifecycleReactor;
   final player = $Player();
   final _focusNode = FocusNode();
@@ -38,8 +36,9 @@ class _HomeState extends ConsumerState<Home> {
         await getIt<AdService>().initBannerAds(context);
         await getIt<AdService>().loadInterstitialAd();
         AppOpenAdManager appOpenAdManager = AppOpenAdManager()..loadAd();
-        appLifecycleReactor = AppLifecycleReactor(appOpenAdManager: appOpenAdManager);
-        if(appLifecycleReactor!=null) {
+        appLifecycleReactor =
+            AppLifecycleReactor(appOpenAdManager: appOpenAdManager);
+        if (appLifecycleReactor != null) {
           appLifecycleReactor!.listenToAppStateChanges();
         }
       });
@@ -81,7 +80,8 @@ class _HomeState extends ConsumerState<Home> {
                       });
                     }
                   },
-                  icon: Text(octaveOffset.toString(), style: TextStyle(color: Colors.white)),
+                  icon: Text(octaveOffset.toString(),
+                      style: TextStyle(color: Colors.white)),
                   padding: EdgeInsets.zero,
                 ),
                 SizedBox(width: 4),
@@ -97,20 +97,20 @@ class _HomeState extends ConsumerState<Home> {
                 value: sustain,
                 onChanged: setSustain,
               ),
-              if (canSplit) ...[
-                IconButton(
-                  onPressed: () async {
-                    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
-                      AppReview.requestReview.then((onValue) {
-                        debugPrint('app_review: $onValue');
-                      });
-                    }
-                    ref.read(splitKeyboardProvider.notifier).state = !splitKeyboard;
-                  },
-                  icon: Icon(!splitKeyboard ? Icons.splitscreen : Icons.fullscreen),
-                  tooltip: context.locale.splitKeyboard,
-                ),
-              ],
+              // if (canSplit) ...[
+              //   IconButton(
+              //     onPressed: () async {
+              //       if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+              //         AppReview.requestReview.then((onValue) {
+              //           debugPrint('app_review: $onValue');
+              //         });
+              //       }
+              //       ref.read(splitKeyboardProvider.notifier).state = !splitKeyboard;
+              //     },
+              //     icon: Icon(!splitKeyboard ? Icons.splitscreen : Icons.fullscreen),
+              //     tooltip: context.locale.splitKeyboard,
+              //   ),
+              // ],
               Builder(builder: (context) {
                 return IconButton(
                   onPressed: () {
@@ -128,7 +128,7 @@ class _HomeState extends ConsumerState<Home> {
                       builder: (context) => Settings(),
                     );
                   },
-                  icon:  Icon(Icons.settings),
+                  icon: Icon(Icons.settings),
                 );
               }),
             ],
@@ -168,8 +168,8 @@ class _HomeState extends ConsumerState<Home> {
           ),
           bottomNavigationBar: Obx(() => banner.isTrue
               ? getIt<AdService>().isBannerLoaded.isTrue
-              ? getIt<AdService>().getBannerAds()
-              : SizedBox()
+                  ? getIt<AdService>().getBannerAds()
+                  : SizedBox()
               : SizedBox()),
         ),
       );

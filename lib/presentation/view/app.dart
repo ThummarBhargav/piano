@@ -20,38 +20,8 @@ class ThePocketPiano extends ConsumerStatefulWidget {
 }
 
 class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
-
-  static const platform = MethodChannel('samples.flutter.dev/firebase');
   static const updateKey = 'app_check';
   final _navKey = GlobalKey<NavigatorState>();
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      try {
-        await platform.invokeMethod('setId').then((value) async {
-          if (value == "Success") {
-            await MobileAds.instance.initialize();
-            MobileAds.instance.updateRequestConfiguration(
-              RequestConfiguration(
-                tagForChildDirectedTreatment:
-                TagForChildDirectedTreatment.unspecified,
-                testDeviceIds: kDebugMode
-                    ? [
-                  "921ECDEF8D5D6B5B6CD6F3BC93FF97D7",
-                ]
-                    : [],
-              ),
-            );
-          }
-        });
-      } on PlatformException catch (e) {
-        print(e);
-      }
-      // checkForUpdate(context);
-    });
-  }
 
   Future<void> checkForUpdate(BuildContext context) async {
     final nav = _navKey.currentState!;
