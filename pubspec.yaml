@@ -44,6 +44,7 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
+    - assets/images/
     - assets/sounds/shot/
     - assets/sounds/sustain/
     - CHANGELOG.md

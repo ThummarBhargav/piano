@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_piano/presentation/view/splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_whatsnew/flutter_whatsnew.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/source/settings.dart';
 import '../../src/version.dart';
-import 'home.dart';
 
 final localeProvider = StateProvider<Locale?>(
   (ref) => null,
@@ -103,7 +103,7 @@ class _ThePocketPianoState extends ConsumerState<ThePocketPiano> {
       locale: ref.watch(localeProvider),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 }

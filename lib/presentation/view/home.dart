@@ -16,8 +16,6 @@ import '../widget/piano_view.dart';
 import '../widget/settings.dart';
 
 class Home extends ConsumerStatefulWidget {
-  const Home({super.key});
-
   @override
   ConsumerState<Home> createState() => _HomeState();
 }
