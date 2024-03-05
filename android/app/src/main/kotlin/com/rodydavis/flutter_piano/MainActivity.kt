@@ -1,9 +1,9 @@
-package com.appleeducate.flutter_piano
+package piano.keyboard.pianomusic
 
 import android.util.Log
 import androidx.annotation.NonNull
-import com.appleeducate.flutter_piano.AdConstant
-import com.appleeducate.flutter_piano.R
+import piano.keyboard.pianomusic.AdConstant
+import piano.keyboard.pianomusic.R
 import com.google.gson.annotations.SerializedName
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine

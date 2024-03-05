@@ -30,7 +30,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace "com.appleeducate.flutter_piano"
+    namespace "piano.keyboard.pianomusic"
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
@@ -57,7 +57,7 @@ android {
 //    }
     
     defaultConfig {
-        applicationId "com.appleeducate.flutter_piano"
+        applicationId "piano.keyboard.pianomusic"
         minSdkVersion 24
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

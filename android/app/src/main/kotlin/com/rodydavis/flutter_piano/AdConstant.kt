@@ -1,4 +1,4 @@
-package com.appleeducate.flutter_piano
+package piano.keyboard.pianomusic
 
 import android.content.Context
 import android.content.pm.PackageManager

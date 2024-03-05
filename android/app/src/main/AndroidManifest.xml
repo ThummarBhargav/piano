@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.appleeducate.flutter_piano">
+    package="piano.keyboard.pianomusic">
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <application android:label="flutter_piano"
+    <application
+        android:label="Learn Piano Music"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:localeConfig="@xml/locales_config">

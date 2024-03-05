@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAk9e6ThaOUdBxVLqnXXG60If1IrTVDZi0',
-    appId: '1:81622560434:android:902bb7dc1c2d00f71423ab',
+    appId: '1:81622560434:android:2879d87a03da1aee1423ab',
     messagingSenderId: '81622560434',
     projectId: 'pianoapp-12bdc',
     databaseURL: 'https://pianoapp-12bdc-default-rtdb.firebaseio.com',
@@ -60,7 +60,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAY8G5Zym_ELltA9LCJBoGWhDAiwx3br0Q',
-    appId: '1:81622560434:ios:696e6cecbc9c3b401423ab',
+    appId: '1:81622560434:ios:0dd88bb3334b7fa01423ab',
     messagingSenderId: '81622560434',
     projectId: 'pianoapp-12bdc',
     databaseURL: 'https://pianoapp-12bdc-default-rtdb.firebaseio.com',
