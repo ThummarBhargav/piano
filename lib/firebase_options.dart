@@ -60,11 +60,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAY8G5Zym_ELltA9LCJBoGWhDAiwx3br0Q',
-    appId: '1:81622560434:ios:0dd88bb3334b7fa01423ab',
+    appId: '1:81622560434:ios:9bd9da745e8701ed1423ab',
     messagingSenderId: '81622560434',
     projectId: 'pianoapp-12bdc',
     databaseURL: 'https://pianoapp-12bdc-default-rtdb.firebaseio.com',
     storageBucket: 'pianoapp-12bdc.appspot.com',
-    iosBundleId: 'com.appleeducate.pocketpiano',
+    iosBundleId: 'piano.keyboard.pianomusic',
   );
 }
