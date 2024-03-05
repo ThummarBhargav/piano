@@ -65,6 +65,6 @@ class DefaultFirebaseOptions {
     projectId: 'pianoapp-12bdc',
     databaseURL: 'https://pianoapp-12bdc-default-rtdb.firebaseio.com',
     storageBucket: 'pianoapp-12bdc.appspot.com',
-    iosBundleId: 'com.appleeducate.pocketpiano',
+    iosBundleId: 'piano.keyboard.pianomusic',
   );
 }
