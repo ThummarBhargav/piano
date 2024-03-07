@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:gdpr_dialog/gdpr_dialog.dart';
+import 'package:get/state_manager.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../main.dart';
@@ -55,29 +57,35 @@ class FirebaseDatabaseHelper {
       print("androidAdsId:-  " + androidAdsId);
       print("iOSAdsId:-  " + iOSAdsId);
       const platform = MethodChannel('samples.flutter.dev/firebase');
-
-      try {
-        await platform.invokeMethod('setId', {
-          "googleAdsId": Platform.isIOS ? iOSAdsId : androidAdsId,
-        }).then((value) async {
-          if (value == "Success") {
-            await MobileAds.instance.initialize();
-            MobileAds.instance.updateRequestConfiguration(
-              RequestConfiguration(
-                tagForChildDirectedTreatment:
-                    TagForChildDirectedTreatment.unspecified,
-                testDeviceIds: kDebugMode
-                    ? [
-                        "921ECDEF8D5D6B5B6CD6F3BC93FF97D7",
-                        "AE1F0F89B6FA703DB464057FBE19FE15",
-                      ]
-                    : [],
-              ),
-            );
-          }
-        });
-      } on PlatformException catch (e) {
-        print(e);
+      if (banner.isTrue) {
+        try {
+          await platform.invokeMethod('setId', {
+            "googleAdsId": Platform.isIOS ? iOSAdsId : androidAdsId,
+          }).then((value) async {
+            if (value == "Success") {
+              await GdprDialog.instance
+                  .showDialog(isForTest: false, testDeviceId: '')
+                  .then((onValue) {
+                print('result === $onValue');
+              });
+              await MobileAds.instance.initialize();
+              MobileAds.instance.updateRequestConfiguration(
+                RequestConfiguration(
+                  tagForChildDirectedTreatment:
+                      TagForChildDirectedTreatment.unspecified,
+                  testDeviceIds: kDebugMode
+                      ? [
+                          "921ECDEF8D5D6B5B6CD6F3BC93FF97D7",
+                          "AE1F0F89B6FA703DB464057FBE19FE15",
+                        ]
+                      : [],
+                ),
+              );
+            }
+          });
+        } on PlatformException catch (e) {
+          print(e);
+        }
       }
 
       AppOpenID = (Platform.isIOS)

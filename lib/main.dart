@@ -35,11 +35,6 @@ Future<void> main() async {
   );
   await FirebaseDatabaseHelper().adsVisible();
   await GetStorage.init();
-  await GdprDialog.instance
-      .showDialog(isForTest: false, testDeviceId: '')
-      .then((onValue) {
-    print('result === $onValue');
-  });
   setUp();
   if (isNullEmptyOrFalse(box.read(ArgumentConstant.isStartTime))) {
     box.write(ArgumentConstant.isStartTime, 0);
